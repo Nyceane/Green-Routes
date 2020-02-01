@@ -1,0 +1,50 @@
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+.jumbotron-dark {
+    /* background: #202124;
+    color: white; */
+}
+.header-button {
+    background: teal;
+}
+.home-search-input {
+    float: right;
+    width: 90%;
+}
+/* slider */
+.slidecontainer {
+    width: 100%;
+}
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    /* background: #d3d3d3; */
+    background-image: linear-gradient(to right, yellow , green);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.slider:hover {
+    opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url('../img/icon/eco-24px.svg');
+    cursor: pointer;
+}
+.slider::-moz-range-thumb {
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url('../img/icon/eco-24px.svg');
+    cursor: pointer;
+}
