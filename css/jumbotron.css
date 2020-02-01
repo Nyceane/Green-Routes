@@ -1,6 +1,6 @@
 
 body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     min-height:100%;
 }
 .jumbotron-dark {
@@ -8,6 +8,10 @@ body {
     color: white; */
     padding: .5rem 1rem;
     margin-bottom: 0;
+}
+.header-logo {
+    margin-left: 20px;
+    height: 38px;
 }
 .header-button {
     background: teal;
@@ -183,4 +187,13 @@ input.material-input:focus ~ .material-highlight {
 }
 .modal-custom .modal-header {
     border-bottom: 0;
+}
+
+
+
+/* nav pills - fast, value, clean */
+.nav-pills li.nav-item {
+    width: 33%;
+    text-align: center;
+    border-radius: 0;
 }

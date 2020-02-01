@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Directions Service</title>
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron.css" rel="stylesheet">
+
+    <!-- material icons -->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header class="blog-header">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-2 pt-1">
+          <a class="text-muted" href="index.html"><img class="header-logo" src="img/logo.png" alt=""></a>
+        </div>
+        <div class="col-6 text-center">
+          <div class="row">
+            <div class="col-6">
+              <a class="header-button text-white btn btn-custom btn-info" href="regularroute.html">Regular Route</a>
+            </div>
+            <div class="col-6">
+              <a class="header-button text-white btn btn-custom btn-info" href="dailyroute.html">Daily Route</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 d-flex justify-content-end align-items-center">
+          <!-- <a class="text-muted" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
+          </a> -->
+          <a class="btn btn-sm btn-outline-secondary" href="#"><img src="img/icon/perm_identity-24px.svg" alt=""></a>
+        </div>
+      </div>
+    </header>
+
+      <div class="jumbotron jumbotron-dark">
+        <div class="container">
+          <h5 class="display-6 text-center">Regular Route</h5>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+              <div class="material-group-input">
+                <img src="img/icon/place-24px.svg" class="mt-1 pt-2" alt="">
+                <div class="home-search-input float-right">
+                  <input class="material-input" type="text" value="Home" required>
+                  <span class="material-highlight"></span>
+                  <span class="material-bar"></span>
+                  <label class="material-label">Start</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-1">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+              <div class="material-group-input">
+                <img src="img/icon/search-24px.svg" class="mt-1 pt-2" alt="">
+                <div class="home-search-input float-left">
+                  <input class="material-input" type="text" value="590 Castro St, Mountain View, CA 94041" placeholder="Where to?" required>
+                  <span class="material-highlight"></span>
+                  <span class="material-bar"></span>
+                  <label class="material-label">Destination</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav pills -->
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link active nav-link-fast" data-toggle="pill" href="#fast">fast</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-value" data-toggle="pill" href="#value">value</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-clean" data-toggle="pill" href="#clean">clean</a>
+      </li>
+    </ul>
+    
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane container active" id="fast">
+            
+            <div class="div-fast">
+                <img src="img/gif/lightning-bolt-weather.gif">
+            </div>
+
+            </div>
+            <div class="iframe-fast d-none">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m32!1m12!1m3!1d202407.81941581515!2d-122.27458965487125!3d37.56396444015949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m17!3e0!4m3!3m2!1d37.7874997!2d-122.39686909999999!4m5!1s0x808fccc1dd64e3ff%3A0x25afe131a5858760!2s780%20East%20Santa%20Clara%20Street%2C%20San%20Jose%2C%20CA!3m2!1d37.3434023!2d-121.87483399999999!4m5!1s0x808fccd90d9f9385%3A0xc8e3230a7ed6bb98!2s1227%20Sunny%20Ct%2C%20San%20Jose%2C%20CA%2095116!3m2!1d37.341329!2d-121.8603083!5e0!3m2!1sen!2sus!4v1580586810985!5m2!1sen!2sus" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+        </div>
+        <div class="tab-pane container fade" id="value">
+            <div class="div-value">
+                <img src="img/gif/expensive.gif">
+            </div>
+
+            <div class="iframe-value d-none">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m32!1m12!1m3!1d202406.82458500616!2d-122.27330220483562!3d37.56433058987728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m17!3e0!4m3!3m2!1d37.7874997!2d-122.39686909999999!4m5!1s0x808fca496aac2c53%3A0x83bf894f1ea63d46!2sSanta%20Clara%20Public%20Works%20Administration%2C%20Warburton%20Avenue%2C%20Santa%20Clara%2C%20CA!3m2!1d37.355137299999996!2d-121.954875!4m5!1s0x808fccd90d9f9385%3A0xc8e3230a7ed6bb98!2s1227%20Sunny%20Ct%2C%20San%20Jose%2C%20CA%2095116!3m2!1d37.341329!2d-121.8603083!5e0!3m2!1sen!2sus!4v1580588216599!5m2!1sen!2sus" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+        </div>
+        <div class="tab-pane container fade" id="clean">
+            <div class="div-clean">
+                <img src="img/gif/snow-storm-weather.gif">
+            </div>
+            
+            <div class="iframe-clean d-none">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d202406.80882631973!2d-122.27330220483503!3d37.5643363898728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x8085807cbe8c5185%3A0xbe2831513aa3aa7c!2s547%20Howard%20St%2C%20San%20Francisco%2C%20CA%2094105!3m2!1d37.7875338!2d-122.3968833!4m5!1s0x808fbb3717fdbab5%3A0x994568586d6b85b1!2s355%20Alma%20St%2C%20Palo%20Alto%2C%20CA!3m2!1d37.4446607!2d-122.1656259!4m5!1s0x808fccd90d9f9385%3A0xc8e3230a7ed6bb98!2s1227%20Sunny%20Ct%2C%20San%20Jose%2C%20CA%2095116!3m2!1d37.341329!2d-121.8603083!5e0!3m2!1sen!2sus!4v1580588921343!5m2!1sen!2sus" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer-sticky-bottom">
+      <div class="container footer-sticky-bottom-container">
+        <a data-toggle="modal" data-target="#exampleModalCenter">
+          <span class="text-muted">Charging Recommendation</span>
+        </a>
+      </div>
+    </footer>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+    
+    <!-- animate lib -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
+
+    <script>
+        $(document).ready(function() {
+          setUpModalAnimation();
+          navPillAnimation();
+          $('.nav-link-fast').click();
+        });
+        function navPillAnimation() {
+            $('.nav-link-fast').click(function() {
+                $('.div-fast').removeClass('d-none');
+                $('.div-clean').removeClass('d-none');
+                $('.div-value').removeClass('d-none');
+                setTimeout(function() {
+                    $('.div-fast').fadeOut().addClass('d-none');
+                    $('.div-clean').fadeIn().addClass('d-none');
+                    $('.div-value').fadeIn().addClass('d-none');
+                    $('.iframe-fast').fadeIn().removeClass('d-none');
+                    $('.iframe-value').fadeOut().addClass('d-none');
+                    $('.iframe-clean').fadeOut().addClass('d-none');
+                }, 1000);
+            });
+
+            $('.nav-link-value').click(function() {
+                $('.div-fast').removeClass('d-none');
+                $('.div-clean').removeClass('d-none');
+                $('.div-value').removeClass('d-none');
+                setTimeout(function() {
+                    $('.div-fast').fadeIn().addClass('d-none');
+                    $('.div-value').fadeOut().addClass('d-none');
+                    $('.div-clean').fadeIn().addClass('d-none');
+                    $('.iframe-value').fadeIn().removeClass('d-none');
+                    $('.iframe-fast').fadeOut().addClass('d-none');
+                    $('.iframe-clean').fadeOut().addClass('d-none');
+                }, 1000);
+            });
+
+            $('.nav-link-clean').click(function() {
+                $('.div-fast').removeClass('d-none');
+                $('.div-clean').removeClass('d-none');
+                $('.div-value').removeClass('d-none');
+                setTimeout(function() {
+                    $('.div-fast').fadeIn().addClass('d-none');
+                    $('.div-value').fadeIn().addClass('d-none');
+                    $('.div-clean').fadeOut().addClass('d-none');
+                    $('.iframe-clean').fadeIn().removeClass('d-none');
+                    $('.iframe-fast').fadeOut().addClass('d-none');
+                    $('.iframe-value').fadeOut().addClass('d-none');
+                }, 1000);
+            });
+
+        }
+        function setUpModalAnimation() {
+          $('.modal-custom').on('show.bs.modal', function (e) {
+            $('.modal-custom .modal-dialog').attr('class', 'modal-dialog  rollIn  animated');
+          });
+          $('.modal-custom').on('hide.bs.modal', function (e) {
+            $('.modal-custom .modal-dialog').attr('class', 'modal-dialog  rollOut  animated');
+          });
+        }
+    </script>
+  </body>
+</html>
