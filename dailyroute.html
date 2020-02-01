@@ -4,6 +4,20 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Directions Service</title>
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron.css" rel="stylesheet">
+
+    <!-- material icons -->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -20,7 +34,147 @@
     </style>
   </head>
   <body>
+    <header class="blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-2 pt-1">
+          <a class="text-muted" href="index.html">GR<img src="img/icon/eco-24px.svg" alt=""></a>
+        </div>
+        <div class="col-6 text-center">
+          <div class="row">
+            <div class="col-6">
+              <a class="header-button text-white btn btn-primary" href="#">Regular Route</a>
+            </div>
+            <div class="col-6">
+              <a class="header-button text-white btn btn-primary" href="dailyroute.html">Daily Route</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 d-flex justify-content-end align-items-center">
+          <!-- <a class="text-muted" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
+          </a> -->
+          <a class="btn btn-sm btn-outline-secondary" href="#"><img src="img/icon/perm_identity-24px.svg" alt=""></a>
+        </div>
+      </div>
+    </header>
+
+      <div class="jumbotron jumbotron-dark">
+        <div class="container">
+          <h5 class="display-6 text-center">Green Route</h5>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+              <div class="material-group-input">
+                <img src="img/icon/place-24px.svg" class="mt-1 pt-2" alt="">
+                <div class="home-search-input float-right">
+                  <input class="material-input" type="text" value="435 Bay Ave, East Palo Alto, CA 94303" required>
+                  <span class="material-highlight"></span>
+                  <span class="material-bar"></span>
+                  <label class="material-label">Start</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-1">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+              <div class="material-group-input">
+                <img src="img/icon/search-24px.svg" class="mt-1 pt-2" alt="">
+                <div class="home-search-input float-left">
+                  <input class="material-input" type="text" value="" placeholder="Where to?" required>
+                  <span class="material-highlight"></span>
+                  <span class="material-bar"></span>
+                  <label class="material-label">Destination</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="map"></div>
+    <footer class="footer-sticky-bottom">
+      <div class="container footer-sticky-bottom-container">
+        <a data-toggle="modal" data-target="#exampleModalCenter">
+          <span class="text-muted">Charging Recommendation</span>
+        </a>
+      </div>
+    </footer>
+
+
+    <!-- MODAL -->
+    <div class="modal-custom modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg zoomInUp" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Charging Recommendations</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+            <!-- TABLE -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Time</th>
+                  <th scope="col">Cost</th>
+                  <th scope="col">Carbon</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>8-10am</td>
+                  <td>$.50</td>
+                  <td>120</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>11am-12pm</td>
+                  <td>$1.00</td>
+                  <td>935</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>12-3pm</td>
+                  <td>$.50</td>
+                  <td>635</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>3-4pm</td>
+                  <td>$1.50</td>
+                  <td>120</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>4-9pm</td>
+                  <td>$1.50</td>
+                  <td>150</td>
+                </tr>
+                <tr>
+                  <th scope="row">6</th>
+                  <td>9pm-12am</td>
+                  <td>$1.00</td>
+                  <td>650</td>
+                </tr>
+                <tr>
+                  <th scope="row">7</th>
+                  <td>12am-7am</td>
+                  <td>$.50</td>
+                  <td>530</td>
+                </tr>
+              </tbody>
+            </table>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script>
       function initMap() {
         var directionsService = new google.maps.DirectionsService();
@@ -72,6 +226,30 @@
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUWnYlScqZECUyVrGhD056n4_YB8m_sUA&callback=initMap">
+    </script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+    
+    <!-- animate lib -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+
+
+    <script>
+        $(document).ready(function() {
+          setUpModalAnimation();
+        });
+        function setUpModalAnimation() {
+          $('.modal-custom').on('show.bs.modal', function (e) {
+            $('.modal-custom .modal-dialog').attr('class', 'modal-dialog  rollIn  animated');
+          });
+          $('.modal-custom').on('hide.bs.modal', function (e) {
+            $('.modal-custom .modal-dialog').attr('class', 'modal-dialog  rollOut  animated');
+          });
+        }
     </script>
   </body>
 </html>
