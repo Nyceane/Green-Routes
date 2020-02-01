@@ -220,23 +220,23 @@
         });
 
         var maker3 = new google.maps.Marker({
-          position: {lat: 37.350833, lng: -121.966906},
+          position: {lat: 37.360964, lng: -121.956042},
           map: map,
           icon: image
         });
 
         maker3.addListener('click', function() {
-          $('#modal1').modal(open);
+          $('#modal2').modal(open);
         });
 
         var maker4 = new google.maps.Marker({
-          position: {lat: 37.380211, lng: -122.076073},
+          position: {lat: 37.393861, lng: -122.086140},
           map: map,
           icon: image
         });
 
         maker4.addListener('click', function() {
-          $('#modal2').modal(open);
+          $('#modal1').modal(open);
         });
 
         directionsRenderer.setMap(map);
