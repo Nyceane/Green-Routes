@@ -103,7 +103,7 @@
 
 
     <!-- MODAL -->
-    <div class="modal-custom modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div id="modal1" class="modal-custom modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg zoomInUp" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -120,52 +120,65 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Time</th>
-                  <th scope="col">Cost</th>
+                  <th scope="col">Cost/KW</th>
                   <th scope="col">Carbon</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>8-10am</td>
-                  <td>$.50</td>
-                  <td>120</td>
+                  <td>12am-3pm</td>
+                  <td>$0.17</td>
+                  <td>0</td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
-                  <td>11am-12pm</td>
-                  <td>$1.00</td>
-                  <td>935</td>
+                  <td>3pm-4pm</td>
+                  <td>$0.37</td>
+                  <td>0</td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
-                  <td>12-3pm</td>
-                  <td>$.50</td>
-                  <td>635</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>3-4pm</td>
-                  <td>$1.50</td>
-                  <td>120</td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>4-9pm</td>
-                  <td>$1.50</td>
-                  <td>150</td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
                   <td>9pm-12am</td>
-                  <td>$1.00</td>
-                  <td>650</td>
+                  <td>$.48</td>
+                  <td>0</td>
                 </tr>
+              </tbody>
+            </table>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="modal2" class="modal-custom modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg zoomInUp" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Charging Recommendations</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+            <!-- TABLE -->
+            <table class="table">
+              <thead>
                 <tr>
-                  <th scope="row">7</th>
-                  <td>12am-7am</td>
-                  <td>$.50</td>
-                  <td>530</td>
+                  <th scope="col">#</th>
+                  <th scope="col">Time</th>
+                  <th scope="col">Cost/KW</th>
+                  <th scope="col">Carbon</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>All</td>
+                  <td>$0.16</td>
+                  <td>64.75 grams CO<sub>2</sub></td>
                 </tr>
               </tbody>
             </table>
@@ -186,10 +199,24 @@
 
 
         var image = 'pin.png';
-        var beachMarker = new google.maps.Marker({
+        var maker = new google.maps.Marker({
           position: {lat: 37.392055, lng: -122.080913},
           map: map,
           icon: image
+        });
+
+        maker.addListener('click', function() {
+          $('#modal1').modal(open);
+        });
+
+        var maker2 = new google.maps.Marker({
+          position: {lat: 37.350833, lng: -121.966906},
+          map: map,
+          icon: image
+        });
+
+        maker2.addListener('click', function() {
+          $('#modal2').modal(open);
         });
 
         directionsRenderer.setMap(map);
