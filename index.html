@@ -11,8 +11,8 @@
     <title>Green Route</title>
 
     <!-- font -->
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -25,18 +25,18 @@
   </head>
 
   <body>
-    <header class="blog-header py-3">
+    <header class="blog-header">
       <div class="row flex-nowrap justify-content-between align-items-center">
         <div class="col-2 pt-1">
-          <a class="text-muted" href="#">GR<img src="img/icon/eco-24px.svg" alt=""></a>
+          <a class="text-muted" href="index.html"><img class="header-logo" src="img/logo.png" alt=""></a>
         </div>
         <div class="col-6 text-center">
           <div class="row">
             <div class="col-6">
-              <a class="header-button text-white btn btn-primary" href="#">Regular Route</a>
+              <a class="header-button text-white btn btn-custom btn-info" href="regularroute.html">Regular Route</a>
             </div>
             <div class="col-6">
-              <a class="header-button text-white btn btn-primary" href="dailyroute.html">Daily Route</a>
+              <a class="header-button text-white btn btn-custom btn-info" href="dailyroute.html">Daily Route</a>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@
                 <div class="material-group-input">
                   <img src="img/icon/place-24px.svg" class="mt-1 pt-2" alt="">
                   <div class="home-search-input float-right">
-                    <input class="material-input" type="text" value="435 Bay Ave, East Palo Alto, CA 94303" required>
+                    <input class="material-input" type="text" value="Current Location" required>
                     <span class="material-highlight"></span>
                     <span class="material-bar"></span>
                     <label class="material-label">Start</label>
@@ -75,7 +75,7 @@
                 <div class="material-group-input">
                   <img src="img/icon/search-24px.svg" class="mt-1 pt-2" alt="">
                   <div class="home-search-input float-left">
-                    <input class="material-input" type="text" value="" placeholder="Where to?" required>
+                    <input class="material-input" type="text" value="San Jose Convention Center" placeholder="Where to?" required>
                     <span class="material-highlight"></span>
                     <span class="material-bar"></span>
                     <label class="material-label">Destination</label>
