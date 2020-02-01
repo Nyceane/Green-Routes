@@ -226,8 +226,28 @@
           map: map,
           icon: image
         });
-
+        
         maker2.addListener('click', function() {
+          $('#modal2').modal(open);
+        });
+
+        var maker3 = new google.maps.Marker({
+          position: {lat: 37.350833, lng: -121.966906},
+          map: map,
+          icon: image
+        });
+
+        maker3.addListener('click', function() {
+          $('#modal1').modal(open);
+        });
+
+        var maker4 = new google.maps.Marker({
+          position: {lat: 37.380211, lng: -122.076073},
+          map: map,
+          icon: image
+        });
+
+        maker4.addListener('click', function() {
           $('#modal2').modal(open);
         });
 
