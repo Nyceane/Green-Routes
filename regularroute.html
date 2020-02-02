@@ -170,12 +170,13 @@
         function navPillAnimation() {
             $('.nav-link-fast').click(function() {
                 $('.div-fast').removeClass('d-none');
-                $('.div-clean').removeClass('d-none');
-                $('.div-value').removeClass('d-none');
 
                 $('.iframe-value').fadeOut().addClass('d-none');
                 $('.iframe-clean').fadeOut().addClass('d-none');
                 setTimeout(function() {
+                    $('.div-clean').removeClass('d-none');
+                    $('.div-value').removeClass('d-none');
+                    
                     $('.div-fast').fadeOut().addClass('d-none');
 
                     $('.div-clean').fadeIn().addClass('d-none');
@@ -186,13 +187,14 @@
             });
 
             $('.nav-link-value').click(function() {
-                $('.div-fast').removeClass('d-none');
-                $('.div-clean').removeClass('d-none');
                 $('.div-value').removeClass('d-none');
 
                 $('.iframe-fast').fadeOut().addClass('d-none');
                 $('.iframe-clean').fadeOut().addClass('d-none');
                 setTimeout(function() {
+                    $('.div-fast').removeClass('d-none');
+                    $('.div-clean').removeClass('d-none');
+                    
                     $('.div-value').fadeOut().addClass('d-none');
 
                     $('.div-fast').fadeIn().addClass('d-none');
@@ -203,13 +205,14 @@
             });
 
             $('.nav-link-clean').click(function() {
-                $('.div-fast').removeClass('d-none');
                 $('.div-clean').removeClass('d-none');
-                $('.div-value').removeClass('d-none');
 
                 $('.iframe-fast').fadeOut().addClass('d-none');
                 $('.iframe-value').fadeOut().addClass('d-none');
                 setTimeout(function() {
+                    $('.div-fast').removeClass('d-none');
+                    $('.div-value').removeClass('d-none');
+                    
                     $('.div-clean').fadeOut().addClass('d-none');
 
                     $('.div-fast').fadeIn().addClass('d-none');
