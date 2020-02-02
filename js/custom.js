@@ -13,12 +13,12 @@ function setUpSlider() {
         output.innerHTML = this.value;
         switch (output.innerHTML) {
             case '1':
-                $('.card-title-carbon').text('6060 grams CO2');
-                $('.card-title-cost').text('$3');
+                $('.card-title-carbon').text('181,800 grams CO2');
+                $('.card-title-cost').text('$90');
                 break;
             case '2':
-                $('.card-title-carbon').text('161 grams CO2');
-                $('.card-title-cost').text('$0.6');
+                $('.card-title-carbon').text('4830 grams CO2');
+                $('.card-title-cost').text('$18');
                 break;
             default:
                 console.log('other num');
