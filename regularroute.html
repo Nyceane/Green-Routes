@@ -110,7 +110,7 @@
     <div class="tab-content">
         <div class="tab-pane container active" id="fast">
             
-            <div class="div-fast">
+            <div class="div-fast pt-5 mt-5 text-center">
                 <img src="img/gif/lightning-bolt-weather.gif">
             </div>
 
@@ -120,7 +120,7 @@
             </div>
         </div>
         <div class="tab-pane container fade" id="value">
-            <div class="div-value">
+            <div class="div-value pt-5 mt-5 text-center">
                 <img src="img/gif/expensive.gif">
             </div>
 
@@ -129,7 +129,7 @@
             </div>
         </div>
         <div class="tab-pane container fade" id="clean">
-            <div class="div-clean">
+            <div class="div-clean pt-5 mt-5 text-center">
                 <img src="img/gif/snow-storm-weather.gif">
             </div>
             
@@ -172,13 +172,16 @@
                 $('.div-fast').removeClass('d-none');
                 $('.div-clean').removeClass('d-none');
                 $('.div-value').removeClass('d-none');
+
+                $('.iframe-value').fadeOut().addClass('d-none');
+                $('.iframe-clean').fadeOut().addClass('d-none');
                 setTimeout(function() {
                     $('.div-fast').fadeOut().addClass('d-none');
+
                     $('.div-clean').fadeIn().addClass('d-none');
                     $('.div-value').fadeIn().addClass('d-none');
+
                     $('.iframe-fast').fadeIn().removeClass('d-none');
-                    $('.iframe-value').fadeOut().addClass('d-none');
-                    $('.iframe-clean').fadeOut().addClass('d-none');
                 }, 1000);
             });
 
@@ -186,13 +189,16 @@
                 $('.div-fast').removeClass('d-none');
                 $('.div-clean').removeClass('d-none');
                 $('.div-value').removeClass('d-none');
+
+                $('.iframe-fast').fadeOut().addClass('d-none');
+                $('.iframe-clean').fadeOut().addClass('d-none');
                 setTimeout(function() {
-                    $('.div-fast').fadeIn().addClass('d-none');
                     $('.div-value').fadeOut().addClass('d-none');
+
+                    $('.div-fast').fadeIn().addClass('d-none');
                     $('.div-clean').fadeIn().addClass('d-none');
+
                     $('.iframe-value').fadeIn().removeClass('d-none');
-                    $('.iframe-fast').fadeOut().addClass('d-none');
-                    $('.iframe-clean').fadeOut().addClass('d-none');
                 }, 1000);
             });
 
@@ -200,13 +206,16 @@
                 $('.div-fast').removeClass('d-none');
                 $('.div-clean').removeClass('d-none');
                 $('.div-value').removeClass('d-none');
+
+                $('.iframe-fast').fadeOut().addClass('d-none');
+                $('.iframe-value').fadeOut().addClass('d-none');
                 setTimeout(function() {
+                    $('.div-clean').fadeOut().addClass('d-none');
+
                     $('.div-fast').fadeIn().addClass('d-none');
                     $('.div-value').fadeIn().addClass('d-none');
-                    $('.div-clean').fadeOut().addClass('d-none');
+                    
                     $('.iframe-clean').fadeIn().removeClass('d-none');
-                    $('.iframe-fast').fadeOut().addClass('d-none');
-                    $('.iframe-value').fadeOut().addClass('d-none');
                 }, 1000);
             });
 
