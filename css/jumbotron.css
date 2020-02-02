@@ -9,11 +9,23 @@ body {
     padding: .5rem 1rem;
     margin-bottom: 0;
 }
+.blog-header {
+    background: #282A36;
+}
+.blog-header .btn-outline-secondary {
+    background: #22b573;
+    margin-right: 10px;
+}
 .header-logo {
     margin-left: 20px;
     height: 38px;
+    padding-bottom: 4px;
 }
 .header-button {
+    background: #282A36;
+    border-radius: 0 !important;
+}
+.header-button.active {
     background: teal;
 }
 .home-search-input {
