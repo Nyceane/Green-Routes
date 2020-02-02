@@ -91,6 +91,13 @@ body {
     margin: 16px 44px;
     margin-right: 12px;
 }
+.material-group-input img {
+    border-radius: 50px;
+    border: 1px solid white;
+    width: 30px;
+    height: 30px;
+    background: white;
+}
 input.material-input{
     font-size:18px;
     padding:10px 10px 10px 5px;
