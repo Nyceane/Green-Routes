@@ -33,7 +33,13 @@
 
     </style>
   </head>
-  <body>
+  
+
+  <body class="">
+    <div class="globe-cover text-center" style="margin: 50vh auto;">
+      <img src="img/gif/globe.gif">
+    </div>
+    <div class="daily-route-cover d-none">
     <header class="blog-header">
       <div class="row flex-nowrap justify-content-between align-items-center">
         <div class="col-2 pt-1">
@@ -188,7 +194,7 @@
         </div>
       </div>
     </div>
-
+    </div>
     <script>
       function initMap() {
         var directionsService = new google.maps.DirectionsService();
@@ -278,7 +284,10 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
     <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
     
@@ -289,6 +298,10 @@
     <script>
         $(document).ready(function() {
           setUpModalAnimation();
+          setTimeout(function() {
+            $('.daily-route-cover').removeClass('d-none').fadeIn();
+            $('.globe-cover').addClass('d-none').fadeOut();
+          },1000);
         });
         function setUpModalAnimation() {
           $('.modal-custom').on('show.bs.modal', function (e) {
