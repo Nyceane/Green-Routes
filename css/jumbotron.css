@@ -195,6 +195,28 @@ input.material-input:focus ~ .material-highlight {
     border: 3px solid #8AC007;
 }
 
+.footer-sticky-bottom-container-left {
+    line-height: 40px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+    
+    position: fixed;
+    width: 46%;
+    bottom: 10px;
+    left: 10px;
+    border: 3px solid #8AC007;
+}
+
+.footer-sticky-bottom-container-right {
+    line-height: 40px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+    
+    position: fixed;
+    width: 46%;
+    bottom: 10px;
+    right: 10px;
+    border: 3px solid #8AC007;
+}
+
 /* CUSTOM MODAL */
 .modal-custom .modal-content {
     border-radius: 0 !important;
