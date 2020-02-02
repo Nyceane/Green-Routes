@@ -7,7 +7,7 @@ body {
 #ThreeJsCanvas {
     position: fixed;
     margin: 0 auto;
-    left: 8%;
+    /* left: 8%; */
     opacity: 0.4;
 }
 .jumbotron-dark {
