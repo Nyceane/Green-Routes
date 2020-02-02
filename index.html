@@ -51,9 +51,10 @@
     </header>
 
     <main role="main">
+      <span id="ThreeJsCanvas" class="viewpoint-fadeInLeft"></span>
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron jumbotron-dark">
+      <div class="jumbotron jumbotron-dark" style="padding: 2rem 1rem !important;">
         <div class="container">
           <!-- <h5 class="display-6 text-center">Green Route</h5> -->
           <div class=""> <!--.box-border-->
@@ -90,7 +91,7 @@
 
       <div class="container">
         <!-- SLIDER -->
-        <div class="row">
+        <div class="row" style="margin-top: 100px;">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
             <div class="slidecontainer">
                 <input type="range" min="1" max="2" value="1" class="slider" id="myRange">
@@ -98,7 +99,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="margin-bottom:50px">
           <!-- 1 -->
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-6 text-left">
             Gas
@@ -120,7 +121,7 @@
         <hr>
 
         <!-- costs -->
-        <div class="row">
+        <div class="row" style="margin-top:50px">
           <div class="col-6 col-sm-6 col-md-6 col-lg-6">
             <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
               <div class="card-header">Monthly Cost</div>
@@ -167,6 +168,106 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r69/three.min.js"></script>
     <script src="js/custom.js"></script>
+    <script>
+        var scene3d = document.getElementById("ThreeJsCanvas");
+        var CANVAS_WIDTH = 1500;
+        var CANVAS_HEIGHT = 900;
+  
+        // SCENE
+        var scene_header = new THREE.Scene();
+  
+        // CAMERA
+        camera_header = new THREE.PerspectiveCamera(75, CANVAS_WIDTH / CANVAS_HEIGHT, 0.1, 1000);
+        camera_header.position.set(0, 0, 150);
+        camera_header.lookAt(scene_header.position);
+  
+        // RENDERER
+        // transparent div background color
+        var renderer_header = new THREE.WebGLRenderer( { alpha: true } );
+        renderer_header.setClearColor( 0x000000, 0 );
+        renderer_header.setSize(CANVAS_WIDTH, CANVAS_HEIGHT);
+  
+        // GEOMETRY & MATERIALS
+        // outlined sphere
+        var geometry_sphere1 = new THREE.SphereGeometry( 80, 80, 80, 5, 5, 5 );
+        var material_phong_outlined = new THREE.MeshPhongMaterial({
+            color: 0xffffff,
+            shininess:30,
+            opacity: 0.4,
+            specular: 0xeeeeee,
+            wireframe: true
+        });
+  
+        var cube_outlined = new THREE.Mesh(geometry_sphere1, material_phong_outlined);
+        scene_header.add(cube_outlined);
+        cube_outlined.castShadow = true;
+        cube_outlined.receiveShadow = true;
+        material_phong_outlined.transparent=true;
+  
+        cube_outlined.position.y = -40;
+        cube_outlined.rotation.y = 15;
+  
+        // materials
+        var lambertMaterial = new THREE.MeshLambertMaterial({
+            opacity: 0.1,
+            color: 0x50acfd
+        });
+        lambertMaterial.transparent=true;
+  
+        var color = new THREE.Color( "#50acfd" );
+        var material_phong_shiny = new THREE.MeshPhongMaterial( {
+            color: color.getHex(),
+            // opacity: 0.9,
+            specular: 0xffffff,
+            shinyness: 100
+        } );
+  
+        //torus
+        var geometry_torus = new THREE.TorusKnotGeometry( 0, 80, 80);
+        var geometry_otherTorus = new THREE.TorusKnotGeometry( 40, 3.5, 100, 10 );
+  
+        var mesh_otherTorus = new THREE.Mesh( geometry_torus, lambertMaterial );
+        var mesh_mesh_outline = new THREE.Mesh( geometry_torus, material_phong_outlined );
+  
+        scene_header.add( mesh_otherTorus );
+        scene_header.add( mesh_mesh_outline );
+  
+        // brighter lights
+        var ambientLight = new THREE.AmbientLight( 0x5bd7c4 );
+        scene_header.add( ambientLight );
+  
+        var lights_header = [];
+        lights_header[ 0 ] = new THREE.PointLight( 0xe90269, 1, 0 );
+        lights_header[ 1 ] = new THREE.PointLight( 0xe90269, 1, 0 );
+        lights_header[ 2 ] = new THREE.PointLight( 0x02f1ff, 1, 0 );
+  
+        lights_header[ 0 ].position.set( 0, 200, 0 );
+        lights_header[ 1 ].position.set( 100, 200, 100 );
+        lights_header[ 2 ].position.set( - 100, - 200, - 100 );
+  
+        scene_header.add( lights_header[ 0 ] );
+        scene_header.add( lights_header[ 1 ] );
+        scene_header.add( lights_header[ 2 ] );
+  
+        // light cast shadows
+        lights_header[ 0 ].castShadow = true;
+        lights_header[ 1 ].castShadow = true;
+        lights_header[ 2 ].castShadow = true;
+  
+        // FINISH SCENE SETUP
+        // document.body.appendChild(scene3d.domElement);
+        ThreeJsCanvas.appendChild(renderer_header.domElement);
+        // renderer.render(scene, camera);
+        var render = function () {
+            requestAnimationFrame(render);
+            cube_outlined.rotation.y -= 0.001;
+            mesh_mesh_outline.rotation.y -= 0.001;
+            mesh_otherTorus.rotation.y -= 0.001;
+            renderer_header.render(scene_header, camera_header);
+        };
+        render();
+    </script>
   </body>
 </html>

@@ -3,6 +3,13 @@ body {
     font-family: 'Ubuntu', sans-serif;
     min-height:100%;
 }
+
+#ThreeJsCanvas {
+    position: fixed;
+    margin: 0 auto;
+    /* left: 8%; */
+    opacity: 0.4;
+}
 .jumbotron-dark {
     /* background: #202124;
     color: white; */
@@ -82,6 +89,7 @@ body {
 .material-group-input{ 
     position:relative; 
     margin: 16px 44px;
+    margin-right: 12px;
 }
 input.material-input{
     font-size:18px;
