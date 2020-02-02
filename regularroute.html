@@ -53,6 +53,7 @@
           <!-- <a class="text-muted" href="#">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
           </a> -->
+          <img src="img/battery-white.png" style="height: 18px; margin-right: 8px;" alt="">
           <a class="btn btn-sm btn-outline-secondary" href="#"><img src="img/icon/perm_identity-24px.svg" alt=""></a>
         </div>
       </div>
@@ -109,7 +110,7 @@
     <div class="tab-content">
         <div class="tab-pane container active" id="fast">
             
-            <div class="div-fast">
+            <div class="div-fast pt-5 mt-5 text-center">
                 <img src="img/gif/lightning-bolt-weather.gif">
             </div>
 
@@ -119,7 +120,7 @@
             </div>
         </div>
         <div class="tab-pane container fade" id="value">
-            <div class="div-value">
+            <div class="div-value pt-5 mt-5 text-center">
                 <img src="img/gif/expensive.gif">
             </div>
 
@@ -128,7 +129,7 @@
             </div>
         </div>
         <div class="tab-pane container fade" id="clean">
-            <div class="div-clean">
+            <div class="div-clean pt-5 mt-5 text-center">
                 <img src="img/gif/snow-storm-weather.gif">
             </div>
             
@@ -171,13 +172,16 @@
                 $('.div-fast').removeClass('d-none');
                 $('.div-clean').removeClass('d-none');
                 $('.div-value').removeClass('d-none');
+
+                $('.iframe-value').fadeOut().addClass('d-none');
+                $('.iframe-clean').fadeOut().addClass('d-none');
                 setTimeout(function() {
                     $('.div-fast').fadeOut().addClass('d-none');
+
                     $('.div-clean').fadeIn().addClass('d-none');
                     $('.div-value').fadeIn().addClass('d-none');
+
                     $('.iframe-fast').fadeIn().removeClass('d-none');
-                    $('.iframe-value').fadeOut().addClass('d-none');
-                    $('.iframe-clean').fadeOut().addClass('d-none');
                 }, 1000);
             });
 
@@ -185,13 +189,16 @@
                 $('.div-fast').removeClass('d-none');
                 $('.div-clean').removeClass('d-none');
                 $('.div-value').removeClass('d-none');
+
+                $('.iframe-fast').fadeOut().addClass('d-none');
+                $('.iframe-clean').fadeOut().addClass('d-none');
                 setTimeout(function() {
-                    $('.div-fast').fadeIn().addClass('d-none');
                     $('.div-value').fadeOut().addClass('d-none');
+
+                    $('.div-fast').fadeIn().addClass('d-none');
                     $('.div-clean').fadeIn().addClass('d-none');
+
                     $('.iframe-value').fadeIn().removeClass('d-none');
-                    $('.iframe-fast').fadeOut().addClass('d-none');
-                    $('.iframe-clean').fadeOut().addClass('d-none');
                 }, 1000);
             });
 
@@ -199,13 +206,16 @@
                 $('.div-fast').removeClass('d-none');
                 $('.div-clean').removeClass('d-none');
                 $('.div-value').removeClass('d-none');
+
+                $('.iframe-fast').fadeOut().addClass('d-none');
+                $('.iframe-value').fadeOut().addClass('d-none');
                 setTimeout(function() {
+                    $('.div-clean').fadeOut().addClass('d-none');
+
                     $('.div-fast').fadeIn().addClass('d-none');
                     $('.div-value').fadeIn().addClass('d-none');
-                    $('.div-clean').fadeOut().addClass('d-none');
+                    
                     $('.iframe-clean').fadeIn().removeClass('d-none');
-                    $('.iframe-fast').fadeOut().addClass('d-none');
-                    $('.iframe-value').fadeOut().addClass('d-none');
                 }, 1000);
             });
 
